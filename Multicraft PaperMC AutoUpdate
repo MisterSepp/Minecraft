@@ -1,5 +1,6 @@
 This Script is using the PaperMC API version v1 - unfortunately the API v1 should be taken out of service in the future.
-The PaperMC API V2 is not able to give you any "lastVersion", so the script will be not longer functional if the API V1 will be switched off... srsly you have to specify every build ID  
+The PaperMC API V2 is not able to give you any "lastVersion", so the script will be not longer functional if the API V1 will be switched off... 
+Srsly you have to specify every build ID if API V1 is deactivated... that will be much fun...
 
 At the Moment you will only have to change the Minecraft Version at the Source URL if an newer version is available. 
 
