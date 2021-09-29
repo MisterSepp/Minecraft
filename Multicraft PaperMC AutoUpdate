@@ -1,0 +1,33 @@
+This Script is using the PaperMC API version v1 - unfortunately the API v1 should be taken out of service in the future.
+The PaperMC API V2 is not able to give you any "lastVersion", so the script will be not longer functional if the API V1 will be switched off... srsly you have to specify every build ID  
+
+At the Moment you will only have to change the Minecraft Version at the Source URL if an newer version is available. 
+
+Create new Text File at <Installpath\>Multicraft\config\jar
+
+Name (Set your own if you want to): paper.jar.conf
+
+Multicraft is reading every .conf file in this folderpath automaticly. You do not have to specify your config at any other point.
+
+After Creating the Script you can install and update PaperMC from the Multicraft Webinterface.
+
+Script:
+
+## ===========================================================
+##       MULTICRAFT CONFIGURATION TO ADD .JAR TYPES
+##  To simplify all the add of JAR in less time than ever.
+##  This configuration was edited by Baloc - 20/04/2019.
+## ===========================================================
+
+[config]
+name = [Paper] 1.17.1-latest
+source = https://papermc.io/api/v1/paper/1.17.1/latest/download
+category = Mods
+
+[encoding]
+#encode = system
+#decode = system
+#fileEncoding = latin-1
+
+[start]
+command = "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -XX:MaxPermSize=128M -Djline.terminal=jline.UnsupportedTerminal -jar "{JAR}" nogui
