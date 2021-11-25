@@ -1,0 +1,19 @@
+As one-Liner: paperversion="1.17.1" && outputfolder="/tmp/" && number=$(curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | grep -o '[0-9]*' | sort -nr | head -1) && curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/paper-$paperversion-$number.jar" 
+
+______________________________
+
+As Script:
+
+#Variables
+paperversion="1.17.1"
+outputfolder="/tmp/"
+
+#Script Magic
+
+# Search for latest Number
+number=$(curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | grep -o '[0-9]*' | sort -nr | head -1)
+
+echo $number
+
+#Download Latest Release
+curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/paper-$paperversion-$number.jar"
