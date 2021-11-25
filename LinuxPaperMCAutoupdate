@@ -1,12 +1,10 @@
-As one-Liner: paperversion="1.17.1" && outputfolder="/tmp/" && number=$(curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | grep -o '[0-9]*' | sort -nr | head -1) && curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/paper-$paperversion-$number.jar" 
-
-______________________________
-
-As Script:
+#!/bin/bash
 
 #Variables
 paperversion="1.17.1"
 outputfolder="/tmp/"
+outputfilename="paper-$paperversion-$number.jar"
+# If you wanna change the Output Filename to paper.jar just use output-filename="paper.jar"
 
 #Script Magic
 
@@ -16,4 +14,4 @@ number=$(curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ |
 echo $number
 
 #Download Latest Release
-curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/paper-$paperversion-$number.jar"
+curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/$outputfilename"
