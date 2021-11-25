@@ -11,7 +11,5 @@ outputfilename="paper-$paperversion-$number.jar"
 # Search for latest Number
 number=$(curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | grep -o '[0-9]*' | sort -nr | head -1)
 
-echo $number
-
 #Download Latest Release
 curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/$outputfilename"
