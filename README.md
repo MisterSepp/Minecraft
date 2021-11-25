@@ -3,4 +3,4 @@
 Scripts for updating PaperMC via Auto-Update Scripts.
 
 Linux (Shell):
-https://github.com/MisterSepp/Multicraft-PaperMC-AutoUpdate/blob/main/LinuxPaperMCAutoupdate
+https://github.com/MisterSepp/PaperMC-AutoUpdate/blob/main/LinuxPaperMCAutoupdate
