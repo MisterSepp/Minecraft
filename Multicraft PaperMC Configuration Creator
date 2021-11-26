@@ -8,13 +8,22 @@ $paperversion="1.17.1"
 $outputfolder="C:\Servers\Multicraft\config\jar"
 $outputfilename="paper.jar"
 $MulticraftPaperJarConf="C:\Servers\Multicraft\config\jar\paper.jar.conf"
+$date=Get-Date
+$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
+$scriptName = $MyInvocation.MyCommand.Name
 
 $number=curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | Select-String -Pattern '[0-9]*'
 $number -replace ',',"`n" -replace ']}',"" -replace '\[',"" > $env:temp\variable.txt
 $number=Get-Content $env:temp\variable.txt -Tail 1
 
+#Write Paper.jar to File
+# curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/$outputfilename"
+
 #Create Paper.jar Configuration
 New-Item $MulticraftPaperJarConf -Force
+Add-Content $MulticraftPaperJarConf "#Version Created at $date - Source https://github.com/MisterSepp/PaperMC-AutoUpdate"
+Add-Content $MulticraftPaperJarConf "#Config File created by $scriptPath - $scriptName"
+Add-Content $MulticraftPaperJarConf ""
 Add-Content $MulticraftPaperJarConf "[config]"
 Add-Content $MulticraftPaperJarConf "name = [Paper] $paperversion-latest"
 Add-Content $MulticraftPaperJarConf "source = https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar"
