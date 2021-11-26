@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# CAREFULL! LATEST RELEASE IS NOT EVERYTIME THE STABLE VERSION!
+
 #Variables
 paperversion="1.17.1"
 outputfolder="/tmp/"
