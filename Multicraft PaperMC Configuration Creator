@@ -13,9 +13,6 @@ $number=curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | 
 $number -replace ',',"`n" -replace ']}',"" -replace '\[',"" > $env:temp\variable.txt
 $number=Get-Content $env:temp\variable.txt -Tail 1
 
-#Write Paper.jar to File
-# curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/$outputfilename"
-
 #Create Paper.jar Configuration
 New-Item $MulticraftPaperJarConf -Force
 Add-Content $MulticraftPaperJarConf "[config]"
