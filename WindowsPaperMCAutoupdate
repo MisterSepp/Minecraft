@@ -1,4 +1,5 @@
 # CAREFULL! LATEST RELEASE IS NOT EVERYTIME THE STABLE VERSION!
+# Powershell Script:
 
 $paperversion="1.17.1"
 $outputfolder="C:\Servers\Multicraft\config\jar"
