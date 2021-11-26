@@ -1,0 +1,11 @@
+# CAREFULL! LATEST RELEASE IS NOT EVERYTIME THE STABLE VERSION!
+
+$paperversion="1.17.1"
+$outputfolder="C:\Servers\Multicraft\config\jar"
+$outputfilename="paper.jar"
+
+$number=curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | Select-String -Pattern '[0-9]*'
+$number -replace ',',"`n" -replace ']}',"" -replace '\[',"" > $env:temp\variable.txt
+$number=Get-Content $env:temp\variable.txt -Tail 1
+
+curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/$outputfilename"
