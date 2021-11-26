@@ -1,5 +1,7 @@
 # Multicraft-PaperMC-AutoUpdate
 
+
+
 # Scripts for updating PaperMC via Auto-Update Scripts
 
 Linux (Shell):
