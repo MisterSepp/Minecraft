@@ -1,0 +1,27 @@
+# CAREFUL! LATEST RELEASE IS NOT EVERYTIME THE STABLE VERSION!
+# This Script is creating an updated Multicraft Configuration for PaperMC, NOT PATCHING THE VERSION.
+# You have to set the MulticraftPaperJarConf to your environment.
+# Impliment it as Windows planned Task & run it every Night, to create an updated Multicraft Paper-Config every night.
+# You can patch PaperMC out of the Multicraft Webinterface then.
+
+$paperversion="1.17.1"
+$outputfolder="C:\Servers\Multicraft\config\jar"
+$outputfilename="paper.jar"
+$MulticraftPaperJarConf="C:\Servers\Multicraft\config\jar\paper.jar.conf"
+
+$number=curl https://papermc.io/api/v2/projects/paper/versions/$paperversion/ | Select-String -Pattern '[0-9]*'
+$number -replace ',',"`n" -replace ']}',"" -replace '\[',"" > $env:temp\variable.txt
+$number=Get-Content $env:temp\variable.txt -Tail 1
+
+#Write Paper.jar to File
+# curl "https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar" -o "$outputfolder/$outputfilename"
+
+#Create Paper.jar Configuration
+New-Item $MulticraftPaperJarConf -Force
+Add-Content $MulticraftPaperJarConf "[config]"
+Add-Content $MulticraftPaperJarConf "name = [Paper] $paperversion-latest"
+Add-Content $MulticraftPaperJarConf "source = https://papermc.io/api/v2/projects/paper/versions/$paperversion/builds/$number/downloads/paper-$paperversion-$number.jar"
+Add-Content $MulticraftPaperJarConf "category = Mods"
+Add-Content $MulticraftPaperJarConf ""
+Add-Content $MulticraftPaperJarConf "[start]"
+Add-Content $MulticraftPaperJarConf 'command = "{JAVA}" -Xmx{MAX_MEMORY}M -Xms{START_MEMORY}M -Djline.terminal=jline.UnsupportedTerminal -jar "{JAR}" nogui"'
