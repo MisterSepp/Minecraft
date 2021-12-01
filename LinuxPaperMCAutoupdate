@@ -3,7 +3,7 @@
 # CAREFULL! LATEST RELEASE IS NOT EVERYTIME THE STABLE VERSION!
 
 #Variables
-paperversion="1.17.1"
+paperversion="1.18"
 outputfolder="/tmp/"
 outputfilename="paper-$paperversion-$number.jar"
 # If you wanna change the Output Filename to paper.jar just use output-filename="paper.jar"
