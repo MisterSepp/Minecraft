@@ -21,8 +21,8 @@ Start Program: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 
 Arguments: <Path\To\File.ps1>
 
-    For example: (C:\Servers\Steam\patch_install_start_vahleim_soft.ps1)
+    For example: (C:\Servers\Scripts\update-papermc-config.ps1)
 
 Start in: <Path\To\Folder>
 
-    for example: C:\Servers\Steam\
+    for example: C:\Servers\Scripts\
