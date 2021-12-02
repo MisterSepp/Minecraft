@@ -4,10 +4,10 @@
 # Impliment it as Windows planned Task & run it every Night, to create an updated Multicraft Paper-Config every night.
 # You can patch PaperMC out of the Multicraft Webinterface then.
 
-$paperversion="1.17.1"
+$paperversion="1.18"
 $outputfolder="C:\Servers\Multicraft\config\jar"
 $outputfilename="paper.jar"
-$MulticraftPaperJarConf="C:\Servers\Multicraft\config\jar\paper.jar.conf"
+$MulticraftPaperJarConf="C:\Servers\Multicraft\config\jar\paper-$paperversion.jar.conf"
 $date=Get-Date
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 $scriptName = $MyInvocation.MyCommand.Name
