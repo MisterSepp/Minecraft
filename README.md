@@ -14,3 +14,15 @@ https://github.com/MisterSepp/PaperMC-AutoUpdate/blob/main/WindowsPaperMCAutoupd
 
 Planned Powershell Task for creating updated Multicraft PaperMC Configuration (at every runtime)
 https://github.com/MisterSepp/PaperMC-AutoUpdate/blob/main/Multicraft%20PaperMC%20Configuration%20Creator
+
+To Create an Powershell planned Task use the following Action Parametes:
+
+Start Program: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+
+Arguments: <Path\To\File.ps1>
+
+    For example: (C:\Servers\Steam\patch_install_start_vahleim_soft.ps1)
+
+Start in: <Path\To\Folder>
+
+    for example: C:\Servers\Steam\
